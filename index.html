@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Start Button</title>
+    <link rel="stylesheet" href="cool_background.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="moving_background.css">
+</head>
+<body>
+    <div class="mouse_move"><img src="galaxy.jpg" class="mouse" value="3" id="moving-background" alt="cool_background"></div>
+    <div id="overlay"></div>
+    <div class="night">
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+
+    </div>          
+    <div class="start-button"><b>Start</b></div>
+        <script type="text/javascript">
+            document.addEventListener("mousemove", parallax);
+            function parallax(event) {
+                this.querySelectorAll(".mouse").forEach((shift) => {
+                    const position = shift.getAttribute("value");
+                    const x = (window.innerWidth - event.pageX * position) / 90;
+                    const y = (window.innerHeight - event.pageY * position) / 90;
+     
+                    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                });
+            }
+        </script>
+</body>
+</html>
